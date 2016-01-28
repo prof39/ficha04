@@ -28,4 +28,10 @@ public class Ponto3D extends Ponto2D {
     public Ponto3D clone() {
         return null;
     }
+
+    void defineZ(int z) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 }
