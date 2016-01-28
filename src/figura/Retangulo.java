@@ -2,16 +2,33 @@ package figura;
 
 import primitivas.Ponto2D;
 
+/**
+ * 
+ * @author BM e NL
+ * @version 1
+ */
+
 public class Retangulo {
     private Ponto2D canto;
     private int largura;
     private int altura;
+    
+    /**
+     * Define a largura e altura com o valor 1,<br>
+     * o canto é criado apartir do Ponto2D
+     */
     
     public Retangulo() {
         largura = 1;
         altura = 1;
         canto = new Ponto2D();
     }
+    /**
+     * 
+     * @param largura o valor da largura
+     * @param altura o valor da altura
+     * @param canto o valor do canto é clonado
+     */
     public Retangulo(int largura, int altura, Ponto2D canto) {
         this.largura = largura;
         this.altura = altura;
