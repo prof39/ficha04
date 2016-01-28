@@ -18,6 +18,7 @@ public class Ficha04 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         Ponto2D p1 = new Ponto2D(4,3);
         Ponto2D p2 = new Ponto2D(6,1);
         Linha2D l = new Linha2D(p1,p2);
