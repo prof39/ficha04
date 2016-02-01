@@ -15,7 +15,7 @@ public class Retangulo {
     
     /**
      * Define a largura e altura com o valor 1,<br>
-     * o canto é criado apartir do Ponto2D
+     * o canto é criado apartir do Ponto2D.
      */
     
     public Retangulo() {
