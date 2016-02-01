@@ -13,32 +13,70 @@ public class Linha2D {
    
     public Linha2D(Ponto2D p1, Ponto2D p2) throws IllegalArgumentException {
         
+        if(p1.equals(p2)) {
+            throw new IllegalArgumentException("Não é possível criar uma linha com dois pontos iguais");
+        }
+        else {
+            this.p1 = p1;
+            this.p2 = p2;
+        }
+        verificaDeclive();
+        if ( vertical == false){
+            calcularDeclive();
+        }
     }
     
     public Linha2D(int x1, int y1, int x2, int y2) throws IllegalArgumentException {
-       
+       if(x1 == x2 && y1 == y2) {
+            throw new IllegalArgumentException("Não é possível criar uma linha com dois pontos iguais");
+        }
+        else {
+            x1 = p1.x;
+            x2 = p2.x;
+            y1 = p1.y;
+            y2 = p2.y;
+            
+        }
+        if(x1 == x2){
+            vertical = true;
+        }
+        else {
+            vertical = false;
+            
+        }
+        
+        verificaDeclive();
+        if ( vertical == false){
+            calcularDeclive();
+        }
+        
     }
     
     private void verificaDeclive() {
-      
+       if(p1.x == p2.x){
+            vertical = true;
+        }
+        else {
+            vertical = false;
+       }
     }
    
     private void calcularDeclive() {
-       
+       declive = (p1.y - p2.y)/(p1.x - p2.x);
     }
    
     public double obterDeclive() {
-        return 0;
+        return declive;
     }
     
     public boolean eVertical() {
-        return false;
+        return vertical;
     }
     
     public boolean pertence(Ponto2D p) {
         boolean res = false;
         
-        return false;
+        return res;
     }
    
     public boolean paralela(Linha2D l) {
