@@ -20,7 +20,7 @@ public class Ficha04 {
         
         Ponto3D p1 = new Ponto3D(4,3,2);
         Ponto3D p2 = new Ponto3D(6,1,3);
-        
+         
         p2.distancia(p1);
         p2.equals(p1);
     }
