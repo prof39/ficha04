@@ -39,9 +39,12 @@ public class CirculoTest {
     @Test
     public void testDefineCentro() {
         System.out.println("defineCentro");
-        Ponto2D centro = new Ponto2D();
+        Ponto2D centro = new Ponto2D(0,0);
         Circulo instance = new Circulo();
         instance.defineCentro(centro);
+        Ponto2D obtido = instance.obterCentro();
+        
+        assertTrue(centro.equals(obtido));
     }
 
     /**
@@ -50,9 +53,10 @@ public class CirculoTest {
     @Test
     public void testDefineRaio() {
         System.out.println("defineRaio");
-        int raio = 0;
+        int raio = 5;
         Circulo instance = new Circulo();
-        instance.defineRaio(raio);
+        
+        
     }
 
     /**
@@ -121,7 +125,7 @@ public class CirculoTest {
     @Test
     public void testEstaDentro() {
         System.out.println("estaDentro");
-        Ponto2D p = new Ponto2D();
+        Ponto2D p = new Ponto2D(0,0);
         Circulo instance = new Circulo();
         boolean expResult = false;
         boolean result = instance.estaDentro(p);
