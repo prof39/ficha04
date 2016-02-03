@@ -35,7 +35,7 @@ public class Linha2D {
      * 
      * @param x1 toma o valor de p1.x
      * @param y1 toma o valor de p1.y
-     * @param x2 toma o valor de p2.x
+     * @param x2 toma o valor de p2.x 
      * @param y2 toma o valor de p2.y
      * @throws IllegalArgumentException faz uma exeção
      */
