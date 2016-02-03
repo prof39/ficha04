@@ -57,7 +57,6 @@ public class CirculoTest {
         Circulo instance = new Circulo();
         instance.defineRaio(raio);
         int obtido = instance.obterRaio();
-        
         assertEquals(raio, obtido);
     }
 
