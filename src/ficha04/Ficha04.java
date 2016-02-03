@@ -5,8 +5,7 @@
  */
 package ficha04;
 
-import primitivas.Linha2D;
-import primitivas.Ponto2D;
+import primitivas.Ponto3D;
 
 /**
  *
@@ -19,11 +18,11 @@ public class Ficha04 {
      */
     public static void main(String[] args) {
         
-        Ponto2D p1 = new Ponto2D(4,3);
-        Ponto2D p2 = new Ponto2D(6,1);
-        Linha2D l = new Linha2D(p1,p2);
-        Ponto2D p3 = new Ponto2D(5,2);
-        System.out.println(l.pertence(p3));
+        Ponto3D p1 = new Ponto3D(4,3,2);
+        Ponto3D p2 = new Ponto3D(6,1,3);
+        
+        p2.distancia(p1);
+        p2.equals(p1);
     }
     
 }
