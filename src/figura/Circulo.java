@@ -33,7 +33,7 @@ public class Circulo {
     }
 
     /**
-     *
+     *Define o Centro
      * @param centro passa ter um clone
      */
     public void defineCentro(Ponto2D centro) {
