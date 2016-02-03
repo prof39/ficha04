@@ -35,8 +35,6 @@ public class Linha2D {
      * 
      * @param x1 toma o valor de p1.x
      * @param y1 toma o valor de p1.y
-     * @param x2 toma o valor de p2.x
-     * @param y2 toma o valor de p2.y
      * @throws IllegalArgumentException faz uma exeção
      */
     public Linha2D(int x1, int y1, int x2, int y2) throws IllegalArgumentException {

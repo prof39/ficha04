@@ -12,7 +12,7 @@ public class Ponto2D {
      */
     public Ponto2D() {
         x = 0;
-        y = 0;
+        y = 0; 
     }
     /**
      * Cria ponto com coordenadas x,y

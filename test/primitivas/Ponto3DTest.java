@@ -69,12 +69,13 @@ public class Ponto3DTest {
         Ponto3D p = new Ponto3D();
         p.definirZ(z);
         assertEquals("defineZ falhou",z,p.z);
+        
         z = -1;
-        p.defineZ(z);
+        p.definirZ(z);
         assertEquals("defineZ falhou", z,p.z);
         
         z = 6;
-        p.defineZ(z);
+        p.definirZ(z);
         assertEquals("defineZ falhou", z,p.z);
     }
 
@@ -88,31 +89,31 @@ public class Ponto3DTest {
         // (1,1,1) --> (2,3,4)
         Ponto3D p1 = new Ponto3D(1,1,1);
         Ponto3D p2 = new Ponto3D(2,3,4);
-        double distEsperada = 2.23607;
+        double distEsperada = 3.741;
         double distResultado = p1.distancia(p2);
-        assertEquals(distEsperada + " != " + distEsperada,distEsperada,distResultado, 0.01);
+        assertEquals("Mensagem", distEsperada , distResultado, 0.001);
         // (2,3,4) --> (1,1,1)
         distResultado = p2.distancia(p1);
-        assertEquals(distEsperada + " != " + distEsperada,distEsperada,distResultado, 0.01);
+        assertEquals("Mensagem", distEsperada , distResultado,0.001);
         //(-1,-5,-3) → (1,1,1)
         p1 = new Ponto3D(-1,-5,-3);
         p2 = new Ponto3D(1,1,1);
-        distEsperada = 6.32456;
+        distEsperada = 7.4833;
         distResultado = p1.distancia(p2);
-        assertEquals(distEsperada + " != " + distEsperada,distEsperada,distResultado, 0.01);
+       assertEquals("Mensagem", distEsperada , distResultado,0.001);
         
         //(1,1,1) → (-1,-5,-3)
         distResultado = p2.distancia(p1);
-        assertEquals(distEsperada + " != " + distEsperada,distEsperada,distResultado, 0.01);
+       assertEquals("Mensagem", distEsperada , distResultado,0.001);
         //(-1,-5,-3) → (-1,-1,-1)
         p1 = new Ponto3D(-1,-5,-3);
         p2 = new Ponto3D(-1,-1,-1);
-        distEsperada = 4;
+        distEsperada = 4.472;
         distResultado = p1.distancia(p2);
-        assertEquals(distEsperada + " != " + distEsperada,distEsperada,distResultado, 0.01);
+       assertEquals("Mensagem", distEsperada , distResultado,0.001);
         //(-1,-1,-1) → (-1,-5,-3)
         distResultado = p2.distancia(p1);
-        assertEquals(distEsperada + " != " + distEsperada,distEsperada,distResultado, 0.01);
+       assertEquals("Mensagem", distEsperada , distResultado,0.001);
     }
 
     /**
@@ -121,13 +122,16 @@ public class Ponto3DTest {
     @Test
     public void testEquals() {
         System.out.println("equals");
-        Ponto3D p = null;
-        Ponto3D instance = new Ponto3D();
-        boolean expResult = false;
-        boolean result = instance.equals(p);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Ponto3D p1 = new Ponto3D(1,1,1);
+        Ponto3D p2 = new Ponto3D(1,1,1);
+        
+        boolean res = p1.equals(p2);
+        assertEquals(p1+"=="+p2,true,res);
+        
+        p1 = new Ponto3D(10,2,2);
+        p2 = new Ponto3D(2,3,5);
+        res = p1.equals(p2);
+        assertEquals(p1+"=="+p2,false,res);
     }
 
     /**
@@ -136,12 +140,17 @@ public class Ponto3DTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Ponto3D instance = new Ponto3D();
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+     
+        Ponto3D p1 = new Ponto3D(1,2,1);
+        Ponto3D p2 = new Ponto3D(-1,-4,-2);
+        
+        String res1 = p1.toString();
+        String esperado = "(1;2;1)";
+        assertEquals("Mensagem" ,esperado,res1);
+        
+        res1 = p2.toString();
+        esperado = "(-1;-4;-2)";
+        assertEquals("Mensagem" ,esperado,res1);
     }
 
     /**
@@ -150,12 +159,12 @@ public class Ponto3DTest {
     @Test
     public void testClone() {
         System.out.println("clone");
-        Ponto3D instance = new Ponto3D();
-        Ponto3D expResult = null;
-        Ponto3D result = instance.clone();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Ponto3D p1 = new Ponto3D(5,2,-8);
+        Ponto3D clone = p1.clone();
+        
+        
+        assertTrue("Mensagem", p1.equals(clone));
+        
     }
     
 }
