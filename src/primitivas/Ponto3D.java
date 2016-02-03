@@ -55,18 +55,12 @@ public class Ponto3D extends Ponto2D {
     @Override
     public String toString() {
         
-        return "Coordenadas: " +this.x+";"+this.y+";"+this.z;
+        return "("+this.x+";"+this.y+";"+this.z+")";
     }
     public Ponto3D clone() {
         
         Ponto3D p2 = new Ponto3D(this.x,this.y,this.z);
         
         return p2;
-    }
-
-    void defineZ(int z) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
+    }    
 }
