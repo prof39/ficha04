@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package figura;
 
 import org.junit.After;
@@ -44,7 +39,7 @@ public class CirculoTest {
     @Test
     public void testDefineCentro() {
         System.out.println("defineCentro");
-        Ponto2D centro = null;
+        Ponto2D centro = new Ponto2D();
         Circulo instance = new Circulo();
         instance.defineCentro(centro);
     }
@@ -56,9 +51,8 @@ public class CirculoTest {
     public void testDefineRaio() {
         System.out.println("defineRaio");
         int raio = 0;
-        Circulo instante = new Circulo();
-        instante.defineRaio(raio);
-        
+        Circulo instance = new Circulo();
+        instance.defineRaio(raio);
     }
 
     /**
@@ -68,7 +62,7 @@ public class CirculoTest {
     public void testObterCentro() {
         System.out.println("obterCentro");
         Circulo instance = new Circulo();
-        Ponto2D expResult = null;
+        Ponto2D expResult = instance.obterCentro();
         Ponto2D result = instance.obterCentro();
         assertEquals(expResult, result);
     }
@@ -83,8 +77,6 @@ public class CirculoTest {
         int expResult = 0;
         int result = instance.obterRaio();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -97,8 +89,6 @@ public class CirculoTest {
         double expResult = 0.0;
         double result = instance.obterArea();
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -111,8 +101,6 @@ public class CirculoTest {
         double expResult = 0.0;
         double result = instance.obterPerimetro();
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -122,11 +110,9 @@ public class CirculoTest {
     public void testToString() {
         System.out.println("toString");
         Circulo instance = new Circulo();
-        String expResult = "";
+        String expResult = instance.toString();
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -135,13 +121,11 @@ public class CirculoTest {
     @Test
     public void testEstaDentro() {
         System.out.println("estaDentro");
-        Ponto2D p = null;
+        Ponto2D p = new Ponto2D();
         Circulo instance = new Circulo();
         boolean expResult = false;
         boolean result = instance.estaDentro(p);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
