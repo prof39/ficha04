@@ -15,7 +15,7 @@ public class Ponto3D extends Ponto2D {
         this.z = 0;
     }
     /**
-     * Damos valores a cada ponto 
+     * Damos valores a cada ponto
      * @param x toma o valor de x
      * @param y toma o valor de y
      * @param z toma o valor de z
