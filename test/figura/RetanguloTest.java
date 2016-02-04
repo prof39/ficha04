@@ -59,7 +59,7 @@ public class RetanguloTest {
         int altura = 0;
         Retangulo r1 = new Retangulo();
         r1.defineAltura(altura);
-        // TODO review the generated test code and remove the default call to fail.
+       
        assertEquals("define altura falhou",altura,r1.obterAltura());
     }
 
@@ -72,8 +72,8 @@ public class RetanguloTest {
         Ponto2D canto = new Ponto2D(2,2);
         Retangulo r1 = new Retangulo();
         r1.defineCanto(canto);
-        // TODO review the generated test code and remove the default call to fail.
-        assertEquals("defineCanto falhou",canto,r1.obterCanto());
+        Ponto2D c = r1.obterCanto();
+        assertTrue("defineCanto falhou",canto.equals(c));
     }
 
     /**
@@ -86,7 +86,7 @@ public class RetanguloTest {
         int esperado = 1;
         int obtido = r1.obterLargura();
         assertEquals("Falhou",esperado,obtido);
-        // TODO review the generated test code and remove the default call to fail.
+      
         
     }
 
@@ -100,8 +100,6 @@ public class RetanguloTest {
         int esperado = 1;
         int resultado =r1.obterAltura();
         assertEquals("Falhou",esperado, resultado);
-        // TODO review the generated test code and remove the default call to fail.
-       
     }
 
     /**
@@ -110,12 +108,12 @@ public class RetanguloTest {
     @Test
     public void testObterCanto() {
         System.out.println("obterCanto");
-        Retangulo instance = new Retangulo();
-        Ponto2D expResult = null;
-        Ponto2D result = instance.obterCanto();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Ponto2D canto = new Ponto2D(2,2);
+        Retangulo r1= new Retangulo();
+        int esperado = 1;
+        int resultado = 1;
+        
+        assertEquals("Falhou",esperado,resultado);
     }
 
     /**
@@ -124,12 +122,12 @@ public class RetanguloTest {
     @Test
     public void testObterArea() {
         System.out.println("obterArea");
-        Retangulo instance = new Retangulo();
-        double expResult = 0.0;
-        double result = instance.obterArea();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Retangulo p = new Retangulo();
+        double esperado = 1.0;
+        double result = p.obterArea();
+        assertEquals("Falhou ",esperado, result, 1.0);
+    
+       
     }
 
     /**
@@ -138,12 +136,12 @@ public class RetanguloTest {
     @Test
     public void testObterPerimetro() {
         System.out.println("obterPerimetro");
-        Retangulo instance = new Retangulo();
-        double expResult = 0.0;
-        double result = instance.obterPerimetro();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Retangulo p = new Retangulo();
+        double  esperado = 4.0;
+        double result = p.obterPerimetro();
+        assertEquals("falhou",esperado, result, 4.0);
+       
+        
     }
 
     /**
@@ -152,12 +150,12 @@ public class RetanguloTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Retangulo instance = new Retangulo();
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Retangulo r1 = new Retangulo();
+        String esperado = r1.toString();
+        String resultado = "";
+        assertEquals("Falhou toString", esperado, resultado);
+        
+        
     }
 
     /**
@@ -166,13 +164,11 @@ public class RetanguloTest {
     @Test
     public void testEstaDentro() {
         System.out.println("estaDentro");
-        Ponto2D p = null;
-        Retangulo instance = new Retangulo();
-        boolean expResult = false;
-        boolean result = instance.estaDentro(p);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Ponto2D p1 = new Ponto2D();
+        Retangulo r1 = new Retangulo();
+        boolean esperado = false;
+        boolean resultado = r1.estaDentro(p1);
+        assertEquals("Falhou EstaDentro", esperado, resultado);
     }
     
 }

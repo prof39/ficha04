@@ -12,8 +12,8 @@ import primitivas.Ponto2D;
  */
 public class Circulo {
 
-    private Ponto2D centro;
-    private int raio;
+    Ponto2D centro;
+    int raio;
 
     /**
      * No construtor cria um novo centro através do Ponto2D. <br>
