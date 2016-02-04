@@ -46,17 +46,17 @@ public class Ponto3DTest {
         int z = -1;
         Ponto3D p = new Ponto3D(0,0,z);
         int z2 = p.obterZ();
-        assertEquals("mensagem",z,z2);
+        assertEquals("obterZ falhou",z,z2);
         
         z = 10;
         Ponto3D p2 = new Ponto3D(0,0,z);
         z2 = p2.obterZ();
-        assertEquals("mensagem", z, z2);
+        assertEquals("obterZ falhou", z, z2);
         
         z = 15;
         Ponto3D p3 = new Ponto3D(0,0,z);
         z2 = p3.obterZ();
-        assertEquals("mensagem", z, z2);
+        assertEquals("obterZ falhou", z, z2);
     }
 
     /**
@@ -91,29 +91,29 @@ public class Ponto3DTest {
         Ponto3D p2 = new Ponto3D(2,3,4);
         double distEsperada = 3.741;
         double distResultado = p1.distancia(p2);
-        assertEquals("Mensagem", distEsperada , distResultado, 0.001);
+        assertEquals("Calculo da distância falhou!!", distEsperada , distResultado, 0.001);
         // (2,3,4) --> (1,1,1)
         distResultado = p2.distancia(p1);
-        assertEquals("Mensagem", distEsperada , distResultado,0.001);
+        assertEquals("Calculo da distância falhou!!", distEsperada , distResultado,0.001);
         //(-1,-5,-3) → (1,1,1)
         p1 = new Ponto3D(-1,-5,-3);
         p2 = new Ponto3D(1,1,1);
         distEsperada = 7.4833;
         distResultado = p1.distancia(p2);
-       assertEquals("Mensagem", distEsperada , distResultado,0.001);
+       assertEquals("Calculo da distância falhou!!", distEsperada , distResultado,0.001);
         
         //(1,1,1) → (-1,-5,-3)
         distResultado = p2.distancia(p1);
-       assertEquals("Mensagem", distEsperada , distResultado,0.001);
+       assertEquals("Calculo da distância falhou!!", distEsperada , distResultado,0.001);
         //(-1,-5,-3) → (-1,-1,-1)
         p1 = new Ponto3D(-1,-5,-3);
         p2 = new Ponto3D(-1,-1,-1);
         distEsperada = 4.472;
         distResultado = p1.distancia(p2);
-       assertEquals("Mensagem", distEsperada , distResultado,0.001);
+       assertEquals("Calculo da distância falhou!!", distEsperada , distResultado,0.001);
         //(-1,-1,-1) → (-1,-5,-3)
         distResultado = p2.distancia(p1);
-       assertEquals("Mensagem", distEsperada , distResultado,0.001);
+       assertEquals("Calculo da distância falhou!!", distEsperada , distResultado,0.001);
     }
 
     /**
@@ -146,11 +146,11 @@ public class Ponto3DTest {
         
         String res1 = p1.toString();
         String esperado = "(1;2;1)";
-        assertEquals("Mensagem" ,esperado,res1);
+        assertEquals("ToString falhou" ,esperado,res1);
         
         res1 = p2.toString();
         esperado = "(-1;-4;-2)";
-        assertEquals("Mensagem" ,esperado,res1);
+        assertEquals("ToString falhou" ,esperado,res1);
     }
 
     /**
@@ -161,9 +161,7 @@ public class Ponto3DTest {
         System.out.println("clone");
         Ponto3D p1 = new Ponto3D(5,2,-8);
         Ponto3D clone = p1.clone();
-        
-        
-        assertTrue("Mensagem", p1.equals(clone));
+        assertTrue("O clone Falhou!!", p1.equals(clone));
         
     }
     
