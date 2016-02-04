@@ -87,7 +87,7 @@ public class Ponto3D extends Ponto2D {
     @Override
     public String toString() {
         
-        return "Coordenadas: " +this.x+";"+this.y+";"+this.z;
+        return "("+this.x+";"+this.y+";"+this.z+")";
     }
     /**
      * Vamos faser um clone das cordenadas do ponto p2
@@ -98,14 +98,5 @@ public class Ponto3D extends Ponto2D {
         Ponto3D p2 = new Ponto3D(this.x,this.y,this.z);
         
         return p2;
-    }
-    /**
-     * Defenimos o valor inteiro de Z
-     * @param z fazemos uma exeção
-     */
-    void defineZ(int z) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
+    }    
 }
