@@ -160,8 +160,26 @@ public class Linha2DTest {
         System.out.println("paralela");
         //(1,1) → (4,1) (horizontal)
         Linha2D l1 = new Linha2D(1,1,4,1);
-        boolean paralela = l1.paralela(l1);
+        //(1,0) → (6,0) (horizontal)
+        Linha2D l2 = new Linha2D(1,0,6,0);
+        boolean paralela = l1.paralela(l2);
         assertTrue("True!!",paralela);
+        
+        
+        //(2,1) → (2,4) (vertical)
+        Linha2D l3 = new Linha2D(2,1,2,4);
+        //(7,1) → (7,4) (vertical)
+        Linha2D l4 = new Linha2D(7,1,7,4);
+        paralela = l3.paralela(l4);
+        assertTrue("True!!",paralela);
+        
+        //(1,2) → (4,3)
+        Linha2D l5 = new Linha2D(2,1,2,4);
+        //(4,3) → (6,1)
+        Linha2D l6 = new Linha2D(4,3,6,1);
+        paralela = l5.paralela(l6);
+        assertFalse("False!!",paralela);
+        
     }
 
     /**
@@ -170,7 +188,26 @@ public class Linha2DTest {
     @Test
     public void testPerpendicular() {
         System.out.println("perpendicular");
+        //(1,1) → (4,1) (horizontal)
+        Linha2D l1 = new Linha2D(1,1,4,1);
+        //(1,0) → (6,0) (horizontal)
+        Linha2D l2 = new Linha2D(1,0,6,0);
+        boolean perpendicular = l1.perpendicular(l2);
+        assertFalse("False!!",perpendicular);
         
+        //(2,1) → (2,4) (vertical)
+        Linha2D l3 = new Linha2D(2,1,2,4);
+        //(1,1) → (4,1) (horizontal)
+        Linha2D l4 = new Linha2D(1,1,4,1);
+        perpendicular = l3.perpendicular(l4);
+        assertTrue("True!!",perpendicular);
+        
+        //(5,1) → (8,4)
+        Linha2D l5 = new Linha2D(5,1,8,4);
+        //(5,3) → (8,0)
+        Linha2D l6 = new Linha2D(5,3,8,0);
+        perpendicular = l5.perpendicular(l6);
+        assertTrue("True!!",perpendicular);
     }
 
     /**
@@ -179,13 +216,19 @@ public class Linha2DTest {
     @Test
     public void testEqual() {
         System.out.println("equal");
-        Linha2D l = null;
-        Linha2D instance = null;
-        boolean expResult = false;
-        boolean result = instance.equal(l);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //(5,1) → (8,4)
+        Linha2D l5 = new Linha2D(5,1,8,4);
+        //(5,3) → (8,0)
+        Linha2D l6 = new Linha2D(5,3,8,0);
+        boolean equal = l5.equal(l6);
+        assertFalse("False!!",equal);
+        
+        //(2,1) → (2,4) (vertical)
+        Linha2D l3 = new Linha2D(2,1,2,4);
+        //(2,1) → (2,4) (vertical)
+        Linha2D l4 = new Linha2D(2,1,2,4);
+        equal = l3.equal(l4);
+        assertTrue("True!!",equal);
     }
 
     
