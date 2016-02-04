@@ -74,7 +74,7 @@ public class Linha2D {
        }
     }
    /**
-    * Verifica se as cordenadas dos potes estão bem
+    * Verifica se as cordenadas dos pontos estão corretas
     */
     private void calcularDeclive() {
        declive = (p1.y - p2.y)/(p1.x - p2.x);
@@ -94,7 +94,7 @@ public class Linha2D {
         return vertical;
     }
     /**
-     * Verifica se o res e false 
+     * Verifica se o resto é falso 
      * @param p mostra se pretence ao Ponto2D
      * @return mostra o resultado de res
      */
@@ -104,9 +104,9 @@ public class Linha2D {
         return res;
     }
    /**
-    * Verifica se o res é false
+    * Verifica se o resto é falso
     * @param l mostra se é paralela a Linha2D
-    * @return mostra o resultado do res
+    * @return mostra o resultado do resto
     */
     public boolean paralela(Linha2D l) {
         boolean res = false;
@@ -114,9 +114,9 @@ public class Linha2D {
         return res;
     }
     /**
-     * Verifica se o res é false
+     * Verifica se o resto é falso
      * @param l mostra se é prependicular a Linha2D
-     * @return mostra o valor de res
+     * @return mostra o valor de resto
      */
     public boolean perpendicular(Linha2D l) {
         boolean res = false;
@@ -126,7 +126,7 @@ public class Linha2D {
    /**
     * Verifica se o equal é a Linha2D
     * @param l mostra se equal faz parte da Linha2D
-    * @return mostra o resultado false
+    * @return mostra o resultado falso
     */
     public boolean equal(Linha2D l) {
         return false;

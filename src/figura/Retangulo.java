@@ -77,14 +77,14 @@ public class Retangulo {
         return canto;
     }
     /**
-     * Faz a largura*altura
+     * Faz a largura*altura que é igual á área do retangulo
      * @return devolve o valor da area 
      */
     public double obterArea() {
         return largura*altura;
     }
     /**
-     * Faz 2*largura + 2*altura
+     * Faz 2*largura + 2*altura que é igual ao perimetro do retangulo
      * @return devolve o perimetro do retangulo
      */
     public double obterPerimetro() {
