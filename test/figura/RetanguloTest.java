@@ -48,6 +48,10 @@ public class RetanguloTest {
         Retangulo r1 = new Retangulo();
         r1.defineLargura(largura);
         assertEquals("defineLargura falhou", largura, r1.obterLargura());
+        
+        largura = -5;
+        r1.defineLargura(largura);
+        assertEquals("defineLargura falhou", largura, r1.obterLargura());
     }
 
     /**
@@ -59,8 +63,11 @@ public class RetanguloTest {
         int altura = 0;
         Retangulo r1 = new Retangulo();
         r1.defineAltura(altura);
-       
-       assertEquals("define altura falhou",altura,r1.obterAltura());
+        assertEquals("define altura falhou",altura,r1.obterAltura());
+        
+        altura = -5;
+         r1.defineAltura(altura);
+        assertEquals("define altura falhou",altura,r1.obterAltura());
     }
 
     /**
@@ -74,6 +81,11 @@ public class RetanguloTest {
         r1.defineCanto(canto);
         Ponto2D c = r1.obterCanto();
         assertTrue("defineCanto falhou",canto.equals(c));
+        
+        Ponto2D canto2 = new Ponto2D(3,3);
+          r1.defineCanto(canto2);
+        Ponto2D c2 = r1.obterCanto();
+        assertTrue("defineCanto falhou",canto2.equals(c2));    
     }
 
     /**
@@ -85,9 +97,7 @@ public class RetanguloTest {
         Retangulo r1 = new Retangulo();
         int esperado = 1;
         int obtido = r1.obterLargura();
-        assertEquals("Falhou",esperado,obtido);
-      
-        
+        assertEquals("Falhou",esperado,obtido);     
     }
 
     /**
@@ -125,9 +135,9 @@ public class RetanguloTest {
         Retangulo p = new Retangulo();
         double esperado = 1.0;
         double result = p.obterArea();
-        assertEquals("Falhou ",esperado, result, 1.0);
+        assertEquals("Falhou ",esperado, result, 0.01);
     
-       
+        
     }
 
     /**
@@ -139,7 +149,7 @@ public class RetanguloTest {
         Retangulo p = new Retangulo();
         double  esperado = 4.0;
         double result = p.obterPerimetro();
-        assertEquals("falhou",esperado, result, 4.0);
+        assertEquals("falhou",esperado, result, 0.01);
        
         
     }
@@ -152,7 +162,7 @@ public class RetanguloTest {
         System.out.println("toString");
         Retangulo r1 = new Retangulo();
         String esperado = r1.toString();
-        String resultado = "";
+        String resultado = r1.toString();
         assertEquals("Falhou toString", esperado, resultado);
         
         
