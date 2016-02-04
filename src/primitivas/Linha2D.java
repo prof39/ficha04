@@ -16,7 +16,8 @@ public class Linha2D {
 
         if (p1.equals(p2)) {
             throw new IllegalArgumentException("Não é possível criar uma linha com dois pontos iguais");
-        } else {
+        } 
+        else {
             this.p1 = p1;
             this.p2 = p2;
         }
@@ -29,7 +30,8 @@ public class Linha2D {
     public Linha2D(int x1, int y1, int x2, int y2) throws IllegalArgumentException {
         if (x1 == x2 && y1 == y2) {
             throw new IllegalArgumentException("Não é possível criar uma linha com dois pontos iguais");
-        } else {
+        } 
+        else {
             x1 = p1.x;
             x2 = p2.x;
             y1 = p1.y;
@@ -38,7 +40,8 @@ public class Linha2D {
         }
         if (x1 == x2) {
             vertical = true;
-        } else {
+        } 
+        else {
             vertical = false;
 
         }
@@ -53,7 +56,8 @@ public class Linha2D {
     private void verificaDeclive() {
         if (p1.x == p2.x) {
             vertical = true;
-        } else {
+        } 
+        else {
             vertical = false;
         }
     }
@@ -69,7 +73,8 @@ public class Linha2D {
     public boolean eVertical() {
         if (p1.x == p2.x) {
             vertical = true;
-        } else {
+        } 
+        else {
             vertical = false;
         }
         return vertical;
@@ -77,8 +82,16 @@ public class Linha2D {
 
     public boolean pertence(Ponto2D p) {
         boolean res = false;
-        double m;
-
+        double m = declive;
+        double b = p.y - m * p.x;
+        if(eVertical() == true) {
+            if(p1.x == p.x) {
+                res = true;
+            }
+        }
+        else if(p.y == m * p.x + b) {
+            res = true;
+        }
         return res;
     }
 
@@ -94,7 +107,7 @@ public class Linha2D {
 
         }
 
-        return res;
+        return res;            
     }
 
     public boolean perpendicular(Linha2D l) {
@@ -120,6 +133,6 @@ public class Linha2D {
 
     public boolean equal(Linha2D l) {
         
-        return false;
+        return this.pertence(l.p1) && this.pertence(l.p2);
     }
 }
