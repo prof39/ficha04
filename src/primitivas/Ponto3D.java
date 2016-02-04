@@ -15,7 +15,7 @@ public class Ponto3D extends Ponto2D {
         this.z = 0;
     }
     /**
-     * Damos valores a cada ponto
+     * Atribuimos valores a cada coodenada
      * @param x toma o valor de x
      * @param y toma o valor de y
      * @param z toma o valor de z
@@ -44,7 +44,7 @@ public class Ponto3D extends Ponto2D {
     }
     /**
      * Vamos dar um valor a destancia
-     * @param p damos varios pomtos
+     * @param p damos varias coordenadas
      * @return da o valor de destancia
      */
     public double distancia(Ponto3D p) {
@@ -65,9 +65,9 @@ public class Ponto3D extends Ponto2D {
         return distancia;
     }
     /**
-     * Vmos fazer equals do Ponto3D
-     * @param p utilizamos os pontes que foram dados anteriormente
-     * @return mostra o res
+     * Vamos fazer equals do Ponto3D
+     * @param p utilizamos as coordenadas que foram dados anteriormente
+     * @return mostra o resto
      */
     public boolean equals(Ponto3D p) {
         
